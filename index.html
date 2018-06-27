@@ -79,7 +79,7 @@
 			
             // The beginning of the body tf posting for the MOVO
 
- 	      // base_chassis_link
+ 	        // base_chassis_link
             tfClient.subscribe('base_chassis_link', function(tf) {
                 console.log("base_chassis_link");
                 console.log(tf);
@@ -93,15 +93,14 @@
                 updateEntity(tf, "#base_link");
             });
 
-	       // front_laser_link
+	        // front_laser_link
             tfClient.subscribe('front_laser_link', function(tf) {
                 console.log("front_laser_link");
                 console.log(tf);
                 updateEntity(tf, "#front_laser_link");
             });
 
-
-	       // kinect2_ir_link 
+	        // kinect2_ir_link 
             tfClient.subscribe('kinect2_ir_link', function(tf) {
                 console.log("kinect2_ir_link");
                 updateEntity(tf, "#kinect2_ir_link");
@@ -199,7 +198,6 @@
                 console.log(tf);
             });
 
-
             // left_gripper_finger2_knuckle_link 
             tfClient.subscribe('left_gripper_finger2_knuckle_link', function(tf) {
                 console.log("left_gripper_finger2_knuckle_link");
@@ -207,14 +205,12 @@
                 console.log(tf);
             });
 
-
             // left_gripper_finger3_finger_tip_link
             tfClient.subscribe('left_gripper_finger3_finger_tip_link', function(tf) {
                 console.log("left_gripper_finger3_finger_tip_link");
                 updateEntity(tf, "#left_gripper_finger3_finger_tip_link");
                 console.log(tf);
             }); 
-
 
             // left_gripper_finger3_knuckle_link 
             tfClient.subscribe('left_gripper_finger3_knuckle_link', function(tf) {
@@ -230,7 +226,6 @@
                 console.log(tf);
             });
 
-
             // left_wrist_3_link 
             tfClient.subscribe('left_wrist_3_link', function(tf) {
                 console.log("left_wrist_3_link");
@@ -238,14 +233,12 @@
                 console.log(tf);
             });
 
-
             // left_wrist_spherical_1_link
             tfClient.subscribe('left_wrist_spherical_1_link', function(tf) {
                 console.log("left_wrist_spherical_1_link");
                 updateEntity(tf, "#left_wrist_spherical_1_link");
                 console.log(tf);
             });
-
 
             // left_wrist_spherical_2_link 
             tfClient.subscribe('left_wrist_spherical_2_link', function(tf) {
@@ -268,7 +261,6 @@
                 console.log(tf);
             });
 
-
             // lower_body_link 
             tfClient.subscribe('lower_body_link', function(tf) {
                 console.log("lower_body_link");
@@ -289,7 +281,6 @@
                 updateEntity(tf, "#odom");
                 console.log(tf);
             });
-
 
             // pan_base_link
             tfClient.subscribe('pan_base_link', function(tf) {
@@ -326,7 +317,6 @@
                 console.log(tf);
             });
 
-
             // right_base_link
             tfClient.subscribe('right_base_link', function(tf) {
                 console.log("right_base_link");
@@ -347,7 +337,6 @@
                 updateEntity(tf, "#right_forearm_link");
                 console.log(tf);
             });
-
 
             // right_gripper_base_link 
             tfClient.subscribe('right_gripper_base_link', function(tf) {
@@ -377,14 +366,12 @@
                 console.log(tf);
             });
 
-
             // right_gripper_finger2_knuckle_link
             tfClient.subscribe('right_gripper_finger2_knuckle_link', function(tf) {
                 console.log("right_gripper_finger2_knuckle_link");
                 updateEntity(tf, "#right_gripper_finger2_knuckle_link");
                 console.log(tf);
             });
-
 
             // right_gripper_finger3_finger_tip_link 
             tfClient.subscribe('right_gripper_finger3_finger_tip_link', function(tf) {
@@ -406,7 +393,6 @@
                 updateEntity(tf, "#right_shoulder_link");
                 console.log(tf);
             });
-
 
             // right_wrist_3_link 
             tfClient.subscribe('right_wrist_3_link', function(tf) {
@@ -430,7 +416,6 @@
                 console.log(tf);
             });
 
-
             // sic_imu_frame 
             tfClient.subscribe('sic_imu_frame', function(tf) {
                 console.log("sic_imu_frame");
@@ -438,15 +423,12 @@
                 console.log(tf);
             });
 
-
-
             // tilt_link 
             tfClient.subscribe('tilt_link', function(tf) {
                 console.log("tilt_link");
                 updateEntity(tf, "#upper_body_link");
                 console.log(tf);
             });
-
 
             // upper_body_link 
             tfClient.subscribe('upper_body_link', function(tf) {
@@ -488,15 +470,64 @@
 				Connection closed.
 			</p>
 		</div>
-	
-	
 	</div>
-	
 	<div id="main-wrap">
-    
-	<div id="sidebar">Left Nav</div>
-    
+	<div id="sidebar">Left Nav</div>    
 	<div id="content-wrap">Content</div>
+    <!-- Connection you need to make to the web VR robot 
+    "left_arm_half_1_link" -> "left_arm_half_2_link"[label="Broadcaster:] 
+    "left_shoulder_link" -> "left_arm_half_1_link"[label="Broadcaster:]
+    "left_arm_half_2_link" -> "left_forearm_link"[label="Broadcaster:] 
+    "left_gripper_base_link" -> "left_gripper_finger1_knuckle_link"[label="Broadcaster:] 
+    "left_ee_link" -> "left_gripper_base_link"[label="Broadcaster:]
+    "left_gripper_base_link" -> "left_gripper_finger2_knuckle_link"[label="Broadcaster:] 
+    "left_gripper_base_link" -> "left_gripper_finger3_knuckle_link"[label="Broadcaster:] 
+    "left_base_link" -> "left_shoulder_link"[label="Broadcaster:]
+    "linear_actuator_link" -> "left_base_link"[label="Broadcaster:]
+    "left_wrist_spherical_2_link" -> "left_wrist_3_link"[label="Broadcaster:]     
+    "left_wrist_spherical_1_link" -> "left_wrist_spherical_2_link"[label="Broadcaster:]    
+    "left_forearm_link" -> "left_wrist_spherical_1_link"[label="Broadcaster:]    
+    "linear_actuator_fixed_link" -> "linear_actuator_link"[label="Broadcaster:]    
+    "base_chassis_link" -> "linear_actuator_fixed_link"[label="Broadcaster:]     
+    "base_chassis_link" -> "mid_body_link"[label="Broadcaster:]     
+    "base_link" -> "base_chassis_link"[label="Broadcaster:]
+    "pan_base_link" -> "pan_link"[label="Broadcaster:] 
+    "linear_actuator_link" -> "pan_base_link"[label="Broadcaster:]     
+    "right_arm_half_1_link" -> "right_arm_half_2_link"[label="Broadcaster:]     
+    "right_shoulder_link" -> "right_arm_half_1_link"[label="Broadcaster:] 
+    "right_arm_half_2_link" -> "right_forearm_link"[label="Broadcaster:] 
+    "right_gripper_base_link" -> "right_gripper_finger1_knuckle_link"[label="Broadcaster:] 
+    "right_ee_link" -> "right_gripper_base_link"[label="Broadcaster:] 
+    "right_gripper_base_link" -> "right_gripper_finger2_knuckle_link"[label="Broadcaster:] 
+    "right_gripper_base_link" -> "right_gripper_finger3_knuckle_link"[label="Broadcaster:]
+    "right_base_link" -> "right_shoulder_link"[label="Broadcaster:]
+    "linear_actuator_link" -> "right_base_link"[label="Broadcaster:]     
+    "right_wrist_spherical_2_link" -> "right_wrist_3_link"[label="Broadcaster:] 
+    "right_wrist_spherical_1_link" -> "right_wrist_spherical_2_link"[label="Broadcaster:] 
+    "right_forearm_link" -> "right_wrist_spherical_1_link"[label="Broadcaster:]     
+    "pan_link" -> "tilt_link"[label="Broadcaster:] 
+    "odom" -> "base_link"[label="Broadcaster:]     
+    "base_chassis_link" -> "front_laser_link"[label="Broadcaster:] 
+    "kinect2_link" -> "kinect2_ir_link"[label="Broadcaster:] 
+    "tilt_link" -> "kinect2_link"[label="Broadcaster:]     
+    "kinect2_ir_link" -> "kinect2_ir_optical_frame"[label="Broadcaster:] 
+    "kinect2_ir_link" -> "kinect2_rgb_link"[label="Broadcaster:] 
+    "kinect2_rgb_link" -> "kinect2_rgb_optical_frame"[label="Broadcaster:] 
+    "left_wrist_3_link" -> "left_ee_link"[label="Broadcaster:]     
+    "left_gripper_finger1_knuckle_link" -> "left_gripper_finger1_finger_tip_link"[label="Broadcaster:] 
+    "left_gripper_finger2_knuckle_link" -> "left_gripper_finger2_finger_tip_link"[label="Broadcaster:] 
+    "left_gripper_finger3_knuckle_link" -> "left_gripper_finger3_finger_tip_link"[label="Broadcaster:] 
+    "base_chassis_link" -> "lower_body_link"[label="Broadcaster:]    
+    "base_chassis_link" -> "rear_laser_link"[label="Broadcaster:] 
+    "right_wrist_3_link" -> "right_ee_link"[label="Broadcaster:]     
+    "right_gripper_finger1_knuckle_link" -> "right_gripper_finger1_finger_tip_link"[label="Broadcaster:] 
+    "right_gripper_finger2_knuckle_link" -> "right_gripper_finger2_finger_tip_link"[label="Broadcaster:] 
+    "right_gripper_finger3_knuckle_link" -> "right_gripper_finger3_finger_tip_link"[label="Broadcaster:] 
+    "base_chassis_link" -> "sic_imu_frame"[label="Broadcaster:] 
+    "linear_actuator_link" -> "upper_body_link"[label="Broadcaster:] 
+    "map" -> "odom"[label="Broadcaster:]
+    -->
+
 	
 	    <a-scene stats="true">
 		

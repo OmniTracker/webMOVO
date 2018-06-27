@@ -77,243 +77,289 @@
             	transThres : 0.01
             });
 			
-			
             // The beginning of the body tf posting for the MOVO
+
+ 	      // base_chassis_link
             tfClient.subscribe('base_chassis_link', function(tf) {
                 console.log("base_chassis_link");
                 console.log(tf);
-            });
-			
-            tfClient.subscribe('pedestal', function(tf) {
-                console.log("pedestal");
-                console.log(tf);
-                updateEntity(tf, "#base_pedestal_entity");
-            });
+                updateEntity(tf, "#base_chassis_link");
+            }); 
 
+	       // base_link 
             tfClient.subscribe('base_link', function(tf) {
                 console.log("base_link");
                 console.log(tf);
-                // updateEntity(tf, "#base_pedestal_entity");
+                updateEntity(tf, "#base_link");
+            });
+
+	       // front_laser_link
+            tfClient.subscribe('front_laser_link', function(tf) {
+                console.log("front_laser_link");
+                console.log(tf);
+                updateEntity(tf, "#front_laser_link");
             });
 
 
-            // The beginning of the body tf posting for the MOVO
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+	       // kinect2_ir_link 
+            tfClient.subscribe('kinect2_ir_link', function(tf) {
+                console.log("kinect2_ir_link");
+                updateEntity(tf, "#kinect2_ir_link");
                 console.log(tf);
             });
 
+	       // kinect2_ir_optical_frame
+            tfClient.subscribe('kinect2_ir_optical_frame', function(tf) {
+                updateEntity(tf, "#kinect2_ir_optical_frame");
+                console.log("kinect2_ir_optical_frame");
+                console.log(tf);
+            });
 
- 	// base_chassis_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+	        // kinect2_link 
+            tfClient.subscribe('kinect2_link', function(tf) {
+                updateEntity(tf, "#kinect2_link");
+                console.log("kinect2_link");
+                console.log(tf);
+            });
+
+	       // kinect2_rgb_link 
+            tfClient.subscribe('kinect2_rgb_link', function(tf) {
+                console.log("kinect2_rgb_link");
+                updateEntity(tf, "#kinect2_rgb_link");
+                console.log(tf);
+            });
+
+	        // kinect2_rgb_optical_frame
+            tfClient.subscribe('kinect2_rgb_optical_frame', function(tf) {
+                console.log("kinect2_rgb_optical_frame");
+                updateEntity(tf, "#kinect2_rgb_optical_frame");
+                console.log(tf);
+            });
+
+	       // left_arm_half_1_link
+            tfClient.subscribe('left_arm_half_1_link', function(tf) {
+                console.log("left_arm_half_1_link");
+                updateEntity(tf, "#left_arm_half_1_link");
                 console.log(tf);
             }); 
-	// base_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-	// front_laser_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-	// kinect2_ir_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-	// kinect2_ir_optical_frame published
-	// kinect2_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
 
-                console.log("left_forearm_link");
+	       // left_arm_half_2_link
+            tfClient.subscribe('left_arm_half_2_link', function(tf) {
+                console.log("left_arm_half_2_link");
+                updateEntity(tf, "#left_arm_half_2_link");
                 console.log(tf);
             });
-	// kinect2_rgb_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-	// kinect2_rgb_optical_frame
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-	// left_arm_half_1_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+
+	       // left_base_link
+            tfClient.subscribe('left_base_link', function(tf) {
+                console.log("left_base_link");
+                updateEntity(tf, "#left_base_link");
                 console.log(tf);
             }); 
-	// left_arm_half_2_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+
+            // left_ee_link 
+            tfClient.subscribe('left_ee_link', function(tf) {
+                console.log("left_ee_link");
+                updateEntity(tf, "#left_ee_link");
                 console.log(tf);
             });
-	// left_base_link
+
+            // left_forearm_link 
             tfClient.subscribe('left_forearm_link', function(tf) {
                 console.log("left_forearm_link");
+                updateEntity(tf, "#left_forearm_link");
+                console.log(tf);
+            });
+
+            // left_gripper_base_link
+            tfClient.subscribe('left_gripper_base_link', function(tf) {
+                console.log("left_gripper_base_link");
+                updateEntity(tf, "#left_gripper_base_link");
+                console.log(tf);
+            });
+
+            // left_gripper_finger1_finger_tip_link
+            tfClient.subscribe('left_gripper_finger1_finger_tip_link', function(tf) {
+                console.log("left_gripper_finger1_finger_tip_link");
+                updateEntity(tf, "#left_gripper_finger1_finger_tip_link");
+                console.log(tf);
+            });
+
+            // left_gripper_finger1_knuckle_link 
+            tfClient.subscribe('left_gripper_finger1_knuckle_link', function(tf) {
+                console.log("left_gripper_finger1_knuckle_link");
+                console.log(tf);
+                updateEntity(tf, "#left_gripper_finger1_knuckle_link");
+            });
+
+            // left_gripper_finger2_finger_tip_link
+            tfClient.subscribe('left_gripper_finger2_finger_tip_link', function(tf) {
+                console.log("left_gripper_finger2_finger_tip_link");
+                updateEntity(tf, "#left_gripper_finger2_finger_tip_link");
+                console.log(tf);
+            });
+
+
+            // left_gripper_finger2_knuckle_link 
+            tfClient.subscribe('left_gripper_finger2_knuckle_link', function(tf) {
+                console.log("left_gripper_finger2_knuckle_link");
+                updateEntity(tf, "#left_gripper_finger2_knuckle_link");
+                console.log(tf);
+            });
+
+
+            // left_gripper_finger3_finger_tip_link
+            tfClient.subscribe('left_gripper_finger3_finger_tip_link', function(tf) {
+                console.log("left_gripper_finger3_finger_tip_link");
+                updateEntity(tf, "#left_gripper_finger3_finger_tip_link");
                 console.log(tf);
             }); 
-// left_ee_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_forearm_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_gripper_base_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_gripper_finger1_finger_tip_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_gripper_finger1_knuckle_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_gripper_finger2_finger_tip_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_gripper_finger2_knuckle_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_gripper_finger3_finger_tip_link
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            }); 
-// left_gripper_finger3_knuckle_link 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_shoulder_link 
 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_wrist_3_link 
 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_wrist_spherical_1_link
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// left_wrist_spherical_2_link 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });// linear_actuator_fixed_link 
-// linear_actuator_link
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// lower_body_link 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// mid_body_link
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // left_gripper_finger3_knuckle_link 
+            tfClient.subscribe('left_gripper_finger3_knuckle_link', function(tf) {
+                console.log("left_gripper_finger3_knuckle_link");
+                updateEntity(tf, "#left_gripper_finger3_knuckle_link");
                 console.log(tf);
             });
 
-// odom published 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// pan_base_link 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// pan_link 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // left_shoulder_link 
+            tfClient.subscribe('left_shoulder_link', function(tf) {
+                console.log("left_shoulder_link");
+                updateEntity(tf, "#left_shoulder_link");
                 console.log(tf);
             });
 
-// rear_laser_link 
 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// right_arm_half_1_link 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // left_wrist_3_link 
+            tfClient.subscribe('left_wrist_3_link', function(tf) {
+                console.log("left_wrist_3_link");
+                updateEntity(tf, "#left_wrist_3_link");
                 console.log(tf);
             });
 
-// right_arm_half_2_link 
 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// right_base_link
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // left_wrist_spherical_1_link
+            tfClient.subscribe('left_wrist_spherical_1_link', function(tf) {
+                console.log("left_wrist_spherical_1_link");
+                updateEntity(tf, "#left_wrist_spherical_1_link");
                 console.log(tf);
             });
 
-// right_ee_link 
 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
-                console.log(tf);
-            });
-// right_forearm_link 
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // left_wrist_spherical_2_link 
+            tfClient.subscribe('left_wrist_spherical_2_link', function(tf) {
+                console.log("left_wrist_spherical_2_link");
+                updateEntity(tf, "#left_wrist_spherical_2_link");
                 console.log(tf);
             });
 
-// right_gripper_base_link 
-
-
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // linear_actuator_fixed_link 
+            tfClient.subscribe('linear_actuator_fixed_link', function(tf) {
+                console.log("linear_actuator_fixed_link");
+                updateEntity(tf, "#linear_actuator_fixed_link");
                 console.log(tf);
             });
-// right_gripper_finger1_finger_tip_link 
 
-            tfClient.subscribe('left_forearm_link', function(tf) {
-                console.log("left_forearm_link");
+            // linear_actuator_link
+            tfClient.subscribe('linear_actuator_link', function(tf) {
+                console.log("linear_actuator_link");
+                updateEntity(tf, "#linear_actuator_link");
+                console.log(tf);
+            });
+
+
+            // lower_body_link 
+            tfClient.subscribe('lower_body_link', function(tf) {
+                console.log("lower_body_link");
+                updateEntity(tf, "#lower_body_link");
+                console.log(tf);
+            });
+
+            // mid_body_link
+            tfClient.subscribe('mid_body_link', function(tf) {
+                console.log("mid_body_link");
+                updateEntity(tf, "#mid_body_link");
+                console.log(tf);
+            });
+
+            // odom 
+            tfClient.subscribe('odom', function(tf) {
+                console.log("odom");
+                updateEntity(tf, "#odom");
+                console.log(tf);
+            });
+
+
+            // pan_base_link
+            tfClient.subscribe('pan_base_link', function(tf) {
+                console.log("pan_base_link");
+                updateEntity(tf, "#pan_base_link");
+                console.log(tf);
+            });
+
+            // pan_link 
+            tfClient.subscribe('pan_link', function(tf) {
+                console.log("pan_link");
+                updateEntity(tf, "#pan_link");
+                console.log(tf);
+            });
+
+            // rear_laser_link 
+            tfClient.subscribe('rear_laser_link', function(tf) {
+                console.log("rear_laser_link");
+                updateEntity(tf, "#rear_laser_link");
+                console.log(tf);
+            });
+
+            // right_arm_half_1_link 
+            tfClient.subscribe('right_arm_half_1_link', function(tf) {
+                console.log("right_arm_half_1_link");
+                updateEntity(tf, "#right_arm_half_1_link");
+                console.log(tf);
+            });
+
+            // right_arm_half_2_link 
+            tfClient.subscribe('right_arm_half_2_link', function(tf) {
+                console.log("right_arm_half_2_link");
+                updateEntity(tf, "#right_arm_half_2_link");
+                console.log(tf);
+            });
+
+
+            // right_base_link
+            tfClient.subscribe('right_base_link', function(tf) {
+                console.log("right_base_link");
+                updateEntity(tf, "#right_base_link");
+                console.log(tf);
+            });
+
+            // right_ee_link 
+            tfClient.subscribe('right_ee_link', function(tf) {
+                console.log("right_ee_link");
+                updateEntity(tf, "#right_forearm_link");
+                console.log(tf);
+            });
+
+            // right_forearm_link 
+            tfClient.subscribe('right_forearm_link', function(tf) {
+                console.log("right_forearm_link");
+                updateEntity(tf, "#right_forearm_link");
+                console.log(tf);
+            });
+
+
+            // right_gripper_base_link 
+            tfClient.subscribe('right_gripper_base_link', function(tf) {
+                console.log("right_gripper_base_link");
+                updateEntity(tf, "#right_gripper_base_link");
+                console.log(tf);
+            });
+
+            // right_gripper_finger1_finger_tip_link 
+            tfClient.subscribe('right_gripper_finger1_finger_tip_link', function(tf) {
+                console.log("right_gripper_finger1_finger_tip_link");
+                updateEntity(tf, "#right_gripper_finger1_finger_tip_link");
                 console.log(tf);
             });
 
